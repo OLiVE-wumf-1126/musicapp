@@ -1,0 +1,21 @@
+
+.content__right
+  %p おてんき
+.content__center
+  - @posts.each do |post|
+    .content__center__message
+      .content__center__message__left
+        .content__center__message__left--image
+          aa
+          = post.image
+      .content__center__message__right
+        .content__center__message__right__text
+          = post.content
+        .content__center__message__right__artistname
+          Artist：
+          = post.artist_name
+      .content__center__message__bottom
+        .content__center__message__bottom__data
+          = post.created_at
+.content__left
+  %p おにゅーす

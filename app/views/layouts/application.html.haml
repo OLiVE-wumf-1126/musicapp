@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{:content=> "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %title Musicapp
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header
+      .header__title
+        = link_to "music", '#', class: "header__title--logo"
+      .header__right
+        = link_to "新規投稿", '#', class: "header__right--btn"
+    .wrapper
+      = yield
