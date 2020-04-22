@@ -14,7 +14,7 @@
 |------|----|-------|
 |content|text||
 |image|text||
-|artist_name||
+|artist_name|text||
 |user|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
