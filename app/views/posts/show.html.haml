@@ -1,0 +1,12 @@
+.post-show
+  .post-title
+    = @post.title
+  .post-artistname
+    = @post.artist_name
+  .post-image
+    - if @post.image.present?
+      = image_tag @post.image.url
+  .post-content
+    = simple_format @post.content
+  .post-edit
+    = link_to '編集', "/posts/#{@post.id}/edit", method: :get
