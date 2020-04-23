@@ -1,21 +1,25 @@
-
-.content__right
-  %p おてんき
-.content__center
-  - @posts.each do |post|
-    .content__center__message
-      .content__center__message__left
-        .content__center__message__left--image
-          aa
-          = post.image
-      .content__center__message__right
-        .content__center__message__right__text
-          = post.content
-        .content__center__message__right__artistname
-          Artist：
-          = post.artist_name
-      .content__center__message__bottom
-        .content__center__message__bottom__data
-          = post.created_at
-.content__left
-  %p おにゅーす
+.posts_index
+  .content__right
+    %p おてんき
+  .content__center
+    - @posts.each do |post|
+      .content__center__message
+        .content__center__message__left
+          .content__center__message__left--image
+            - if post.image.present?
+              = image_tag post.image.url
+        .content__center__message__right
+          .content__center__message__right__text
+            = post.title
+            = link_to post.title, post_path(post.id)
+          .content__center__message__right__artistname
+            Artist：
+            = post.artist_name
+        .content__center__message__bottom
+          .content__center__message__bottom__data
+            = post.created_at
+        .content__center__message__edit
+          = link_to '削除', "/posts/#{post.id}", method: :delete
+          -# = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+  .content__left
+    %p おにゅーす

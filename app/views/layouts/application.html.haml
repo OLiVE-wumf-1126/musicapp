@@ -9,8 +9,15 @@
   %body
     .header
       .header__title
-        = link_to "music", '#', class: "header__title--logo"
+        = link_to "music", root_path, class: "header__title--logo"
       .header__right
-        = link_to "新規投稿", '#', class: "header__right--btn"
+        - if user_signed_in?
+          .signed_in
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "新規投稿", new_post_path, class: "header__right--btn"
+        - else
+          .no_signed_in
+            =link_to "ログイン", new_user_session_path, class: 'post'
+            = link_to "新規登録", new_user_registration_path, class: 'post'
     .wrapper
       = yield

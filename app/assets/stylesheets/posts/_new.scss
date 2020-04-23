@@ -1,0 +1,32 @@
+.post_new{
+  font-size: 20px;
+  text-align: center;
+  .form{
+    height: 700px;
+    width: 600px;
+    margin: 0 auto;
+    &__title{
+      height: 30px;
+      width: 600px;
+      margin-bottom: 20px;
+    }
+    &__image{
+      height: 30px;
+      width: 600px;
+      margin-bottom: 20px;
+    }
+    &__artistname{
+      height: 30px;
+      width: 600px;
+      margin-bottom: 20px;
+    }
+    &__text{
+      height: 300px;
+      width: 600px;
+      margin-bottom: 20px;
+    }
+    &__send{
+
+    }
+  }
+}

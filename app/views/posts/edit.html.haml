@@ -1,0 +1,9 @@
+.post_edit
+  %p 編集
+  .form
+    = form_for @post do |form|
+      = form.text_field :title, placeholder: "タイトル", class: "form__title"
+      = form.file_field :image, class: 'form__image'
+      = form.text_field :artist_name, placeholder: "アーティスト名", class: "form__artistname"
+      = form.text_area :content, placeholder: "text", class: "form__text"
+      = form.submit "SEND", class: "form_send"

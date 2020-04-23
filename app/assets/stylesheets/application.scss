@@ -19,4 +19,7 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "posts";
+@import "posts/index";
+@import "posts/new";
+@import "posts/show";
+@import "posts/edit";
