@@ -9,10 +9,12 @@
   %body
     .header
       .header__title
-        = link_to "music", root_path, class: "header__title--logo"
+        = link_to "title", root_path, class: "header__title--logo"
       .header__right
         - if user_signed_in?
+          =  current_user.name
           .signed_in
+            = link_to "マイページ", "/users/#{current_user.id}"
             = link_to "ログアウト", destroy_user_session_path, method: :delete
             = link_to "新規投稿", new_post_path, class: "header__right--btn"
         - else

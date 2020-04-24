@@ -15,7 +15,7 @@
 |content|text||
 |image|text||
 |artist_name|text||
-|user|reference|null: false, foreign_key: true|
+|user_id|integer||
 ### Association
 - belongs_to :user
 - has_many :comments
@@ -24,8 +24,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text||
-|user|reference|null: false, foreign_key: true|
-|post|reference|null: false, foreign_key: true|
+|user_id|integer||
+|post_id|integer||
 ### Association
 - belongs_to :user
 - belongs_to :post
