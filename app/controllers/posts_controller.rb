@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -16,6 +16,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+
   end
   
   def edit
@@ -36,7 +39,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require("post").permit(:title, :image, :artist_name, :content)
+    params.require("post").permit(:title, :image, :artist_name, :content).merge(user_id: current_user.id)
   end
   
   def move_to_index

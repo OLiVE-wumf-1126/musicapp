@@ -9,4 +9,18 @@
   .post-content
     = simple_format @post.content
   .post-edit
-    = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+    - if user_signed_in? && current_user.id == @post.user_id
+      = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+  .post-comment
+    - if current_user
+      = form_for [@post, @comment] do |form|
+        = form.text_area :text, placeholder: "コメントする", rows: "4"
+        = form.submit "SEND"
+      %P コメントの投稿には新規登録/ログインが必要です
+    .post-comment__content
+      %h4 《コメント一覧》
+      - if @comments
+        - @comments.each do |comment|
+          %p 
+            = link_to comment.user.name, "/users/#{comment.user_id}"
+            = comment.text
