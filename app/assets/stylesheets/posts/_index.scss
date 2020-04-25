@@ -3,13 +3,15 @@
 }
 
 
+
 .header{
-  background-color: red;
+  background-color: #FFFFEE;
   height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
+  border-bottom:solid 1px gray;
   &__title{
     &--logo{
       font-size: 50px;
@@ -18,25 +20,57 @@
     }
   }
   &__right{
+    display: flex;
     &--btn{
-      font-size: 20px;
-      padding: 10px 10px;
-      text-decoration: none;
+      height: 60px;
+      width: 100px;
+      background-color: white;
+    }
+    .signed_in{
+      width: 200px;
+      .dropdown-btn{
+        width: 150px;
+        position:relative;
+        display:inline-block;
+        padding:20px;
+        cursor:pointer;
+        &:hover {
+          background:#666;
+        }
+      }
+      .dropdown {
+        z-index:1000;
+        background:#666;
+        position:absolute;
+        left:0;
+        top:55px;
+        width:150px;
+        padding:10px 20px;
+        display:none;
+        li {
+          display:inline-block;
+          margin:10px 0;
+          a {
+            color:#fff;
+          }
+        }
+      }
     }
   }
+  
 }
 .posts_index{
   height: calc(100vh - 80px);
   width: 100%;
   .content__right{
     height: 100%;
-    width: 300px;
+    width: 20%;
     float: left;
     background-color: lemonchiffon;
   }
   .content__center{
     height: 100%;
-    width: calc(100% - 600px);
+    width: 45%;
     float: left;
     &__message{
       height: 100px;
@@ -51,11 +85,36 @@
           line-height: 100px;
         }
       }
+      &__right{
+        &__text{
+          .title{
+            text-decoration: none;
+          }
+        }
+        &__artistname{
+
+        }
+      }
+      &__bottom{
+        float: right;
+        margin-top: 30px;
+        &__data{
+
+        }
+      }
+      &__user{
+        margin-top: 30px;
+        &--data{
+          .user{
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
   .content__left{
     height: 100%;
-    width: 300px;
+    width: 35%;
     float: left;
     background-color: lightcoral;
   }
