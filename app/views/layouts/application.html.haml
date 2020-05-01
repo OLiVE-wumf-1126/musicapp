@@ -4,28 +4,48 @@
     %meta{:content=> "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title Musicapp
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = Gon::Base.render_data
+    = javascript_include_tag 'application'
+    
+    
   %body
     .header
       .header__title
         = link_to "title", root_path, class: "header__title--logo"
+      %ul.header__link
+        %li.header__link--youtube
+        = link_to "https://www.youtube.com/" do
+          = icon("fab", "youtube")
+        %li.header__link--facebook
+        =link_to "https://www.facebook.com/" do
+          = icon("fab", "facebook")
+        %li.header__link--twitter
+        = link_to "https://twitter.com/home" do
+          = icon("fab", "twitter")
+        %li.header__link--instagram
+        = link_to "https://www.instagram.com/" do
+          = icon("fab", "instagram")
+      .header__user__name
+        - if user_signed_in?
+          ようこそ
+          = current_user.name.truncate(15)
+          さん
       .header__right
         - if user_signed_in?
           %ul.signed_in
-            %li.dropdown-btn  
-              =  current_user.name
+            %li.dropdown-btn
+              = icon("fas", "users-cog")
+              メニュー
               %ul.dropdown
                 %li= link_to "マイページ", "/users/#{current_user.id}"
                 %li= link_to "ログアウト", destroy_user_session_path, method: :delete
-          = link_to "新規投稿", new_post_path, class: "header__right--btn"
+          .header__right--btn
+            = icon("fas", "paper-plane")
+            = link_to "新規投稿", new_post_path, class: "send-btn"
         - else
-          %ul.signed_in
-            %li.dropdown-btn
-              ログイン/新規登録
-              %ul.dropdown
-                %li=link_to "ログイン", new_user_session_path, class: 'post'
-                %p
-                %li= link_to "新規登録", new_user_registration_path, class: 'post'
+          .header__right__login--btn
+            = link_to "ログイン", new_user_session_path, class: 'login'
+            = link_to "新規登録", new_user_registration_path, class: 'sign-in'
     .wrapper
       = yield

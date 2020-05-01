@@ -1,0 +1,69 @@
+.post__show{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  font-family: 'TsukuARdGothic-Regular';
+  &__right{
+    width: 20%;
+    margin: 50px 50px;
+    float: left;
+    &__image{
+    }
+  }
+  &__left{
+    width: 40%;
+    float: left;
+    position: relative;
+    &__title{
+      width: 500px;
+      font-size: 25px;
+      margin-top: 50px;
+    }
+    &__artistname{
+      width: 500px;
+      font-size: 25px;
+      margin-top: 50px;
+    }
+    &__content{
+      height: 200px;
+      width: 500px;
+      font-size: 20px;
+      margin-top: 50px;
+      overflow: scroll;
+    }
+    &__edit{
+      float: left;
+      height: 30px;
+      width: 600px;
+      font-size: 20px;
+      margin: 30px 0;
+    }
+  }
+  &__comment{
+    width: 40%;
+    .new_comment{
+      #comment_text{
+        margin-top: 30px;
+        height: 50px;
+        width: 400px;
+      }
+      #send-btn{
+        height: 30px;
+        width: 100px;
+        border: solid 1px;color: rgb(34, 34, 59);
+        border-color: rgb(89, 89, 160);
+        background-color: rgb(215, 215, 255);
+      }
+    }
+    &__content{
+      p{
+        #show-comment-user{
+          width: 100px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}

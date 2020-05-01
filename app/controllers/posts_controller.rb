@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
+    gon.openweather_aip_key = ENV['WEATHER_KEY']
+    gon.news_aip_key = ENV['NEWS_KEY']
   end
 
   def new

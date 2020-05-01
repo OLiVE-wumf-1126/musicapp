@@ -1,0 +1,36 @@
+// box,titieはlogin.scssで読み込まれます
+
+.name__field{
+  padding-left: 75px;
+  margin-bottom: 20px;
+  #user_name{
+    width: 250px;
+  }
+}
+.pass-confirmation__field{
+  padding-left: 75px;
+  margin-bottom: 20px;
+  #user_password_confirmation{
+    width: 250px;
+  }
+}
+.new-login__actions{
+  padding-left: 75px;
+  height: 50px;
+  width: 100%;
+  .btn{
+    float: left;
+    width: 250px;
+    height: 30px;
+    border: solid 1px;color: rgb(59, 52, 34);
+    border-color: rgb(160, 153, 89);
+    background-color: rgb(255, 222, 160);
+  }
+}
+
+.account__signin{
+  text-align: center;
+    &--link{
+      text-decoration: none;
+    }
+  }

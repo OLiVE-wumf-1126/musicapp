@@ -1,0 +1,47 @@
+.box{
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 500px;
+  width: 400px;
+  border: 1px solid;
+  border-color: rgb(161, 161, 161);
+  border-radius: 10px;
+  .title{
+    padding-left: 75px;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .email__field{
+    padding-left: 75px;
+    margin-bottom: 20px;
+    #user_email{
+      width: 250px;
+    }
+  }
+  .pass__field{
+    padding-left: 75px;
+    margin-bottom: 20px;
+    #user_password{
+      width: 250px;
+    }
+  }
+  .login__actions{
+    padding-left: 75px;
+    height: 100px;
+    width: 100%;
+    .btn{
+      float: left;
+      width: 250px;
+      height: 30px;
+      border: solid 1px;color: rgb(34, 34, 59);
+      border-color: rgb(89, 89, 160);
+      background-color: rgb(215, 215, 255);
+    }
+  }
+  .new_account{
+    text-align: center;
+    &--link{
+      text-decoration: none;
+    }
+  }
+}

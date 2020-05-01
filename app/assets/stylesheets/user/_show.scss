@@ -1,0 +1,60 @@
+.user_show{
+  height: 50px;
+  width: 100%;
+  font-size: 30px;
+  font-family: 'TsukuARdGothic-Regular';
+}
+  .user_content__center{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'TsukuARdGothic-Regular';
+    &__message{
+      height: 100px;
+      width: 30%;
+      margin: 20px 20px;
+      transition:0.5s all;
+      &:hover {
+        transition:0.5s all;
+        background:rgb(223, 218, 214);
+      }
+      &__left{
+        height: 100px;
+        width: 100px;
+        float: left;
+        margin-right: 20px;
+        &__image{
+          text-align: center;
+          line-height: 100px;
+          
+        }
+      }
+      &__right{
+        &__text{
+          .title{
+            text-decoration: none;
+          }
+        }
+        &__artistname{
+
+        }
+      }
+      &__bottom{
+        float: right;
+        margin-top: 30px;
+        &__data{
+
+        }
+      }
+      &__user{
+        margin-top: 30px;
+        &--data{
+          .user{
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }

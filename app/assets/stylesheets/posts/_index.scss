@@ -5,13 +5,15 @@
 
 
 .header{
-  background-color: #FFFFEE;
   height: 80px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   text-decoration: none;
-  border-bottom:solid 1px gray;
+  background:rgb(232, 226, 255);
+  box-shadow: 0 0 3px 0 gray;
+  position: relative;
+  font-family: Hiragino Maru Gothic ProN;
   &__title{
     &--logo{
       font-size: 50px;
@@ -19,40 +21,134 @@
       text-decoration: none;
     }
   }
+  &__link{
+    margin-top: 45px;
+    display: flex;
+    position: absolute;
+    left: 800px;
+    .fa-youtube{
+      color: red;
+      font-size: 30px;
+      margin-right: 20px;
+    }
+    .fa-facebook{
+      color:#00588f;
+      font-size: 30px;
+      margin-right: 20px;
+    }
+    .fa-twitter{
+      color:#1da1f2;
+      font-size: 30px;
+      margin-right: 20px;
+    }
+    .fa-instagram{
+      color:#e1306c;
+      font-size: 30px;
+      margin-right: 20px;
+    }
+  }
+  &__user__name{
+    width: 320px;
+    padding-top: 10px;
+    position: absolute;
+    left: 780px;
+  }
   &__right{
     display: flex;
-    &--btn{
-      height: 60px;
-      width: 100px;
-      background-color: white;
-    }
     .signed_in{
-      width: 200px;
+      width: 150px;
       .dropdown-btn{
+        height: 80px;
+        text-align: center;
+        line-height: 40px;
         width: 150px;
         position:relative;
         display:inline-block;
-        padding:20px;
+        padding:20px 2px;
+        text-overflow: ellipsis;
         cursor:pointer;
+        transition:0.5s all;
         &:hover {
-          background:#666;
+          color: white;
+          background:rgb(77, 167, 252);
         }
       }
       .dropdown {
-        z-index:1000;
+        z-index:500;
         background:#666;
         position:absolute;
         left:0;
-        top:55px;
+        top:80px;
         width:150px;
         padding:10px 20px;
         display:none;
         li {
           display:inline-block;
           margin:10px 0;
+          &:hover {
+            letter-spacing: 5px;
+            transition:0.5s all;
+          }
           a {
+            text-decoration: none;
             color:#fff;
           }
+        }
+      }
+    }
+    .header__right--btn{
+      height: 80px;
+      width: 150px;
+      text-align: center;
+      line-height: 79px;
+      transition:0.5s all;
+      &:hover {
+        color: white;
+        letter-spacing: 5px;
+        transition:0.5s all;
+        background:rgb(77, 167, 252);
+      }
+      .send-btn{
+        color: black;
+        text-decoration: none;
+        &:hover {
+          color: white;
+          letter-spacing: 5px;
+          transition:0.5s all;
+          background:rgb(77, 167, 252);
+        }
+      }
+    }
+    &__login--btn{
+      display: flex;
+      .login{
+        color: black;
+        height: 79px;
+        width: 150px;
+        text-align: center;
+        line-height: 79px;
+        text-decoration: none;
+        transition:0.5s all;
+        &:hover {
+          color: white;
+          letter-spacing: 5px;
+          transition:0.5s all;
+          background:rgb(77, 167, 252);
+        }
+      }
+      .sign-in{
+        color: black;
+        height: 80px;
+        width: 150px;
+        text-align: center;
+        line-height: 79px;
+        text-decoration: none;
+        transition:0.5s all;
+        &:hover {
+          color: white;
+          letter-spacing: 5px;
+          transition:0.5s all;
+          background:rgb(77, 167, 252);
         }
       }
     }
@@ -62,19 +158,59 @@
 .posts_index{
   height: calc(100vh - 80px);
   width: 100%;
+  background-color: rgb(255, 252, 244);
   .content__right{
     height: 100%;
     width: 20%;
     float: left;
-    background-color: lemonchiffon;
+    font-family: 'TsukuARdGothic-Regular';
+    .weather-title{
+      text-align: center;
+      font-size: 25px;
+      font-family: Hiragino Maru Gothic ProN;
+    }
   }
+    .weather{
+      height: 90%;
+      width: 100%;
+      margin: auto;
+      overflow: scroll;
+      .weather__report{
+        padding-left: 10px;
+        margin: 10px;
+        background-color: rgb(219, 245, 255);
+        border-radius: 10px;
+        &--date{
+          
+        }
+        &--img{
+          float: right;
+          padding-right: 10px;
+        }
+        &--main{
+
+        }
+        &--temp{
+
+        }
+      }
+    }
+  
   .content__center{
     height: 100%;
     width: 45%;
     float: left;
+    font-family: 'TsukuARdGothic-Regular';
+    overflow: scroll;
     &__message{
       height: 100px;
+      width: 94%;
       margin: 20px 20px;
+      transition:0.5s all;
+      &:hover {
+        transition:0.5s all;
+        background:rgb(223, 218, 214);
+      }
       &__left{
         height: 100px;
         width: 100px;
@@ -83,30 +219,46 @@
         &__image{
           text-align: center;
           line-height: 100px;
+          
         }
       }
       &__right{
+        height: 100px;
+        width: 79%;
+        float: left;
         &__text{
+          height: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
           .title{
             text-decoration: none;
+
           }
         }
         &__artistname{
-
+          height: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
-      }
-      &__bottom{
-        float: right;
-        margin-top: 30px;
-        &__data{
-
+      
+        &__bottom{
+          float: right;
+          margin-top: 30px;
+          &__data{
+          }
         }
-      }
-      &__user{
-        margin-top: 30px;
-        &--data{
-          .user{
-            text-decoration: none;
+        &__user{
+          margin-top: 30px;
+          &--data{
+            height: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            .user{
+              text-decoration: none;
+            }
           }
         }
       }
@@ -116,6 +268,27 @@
     height: 100%;
     width: 35%;
     float: left;
-    background-color: lightcoral;
+    .content__left__title{
+      text-align: center;
+      width: 450px;
+     font-size: 25px;
+     font-family: Hiragino Maru Gothic ProN;
+    }
+    .news{
+      height: 95%;
+      overflow: scroll;
+      .news__content{
+        margin: 10px 10px;
+        font-family: Hiragino Mincho Pro;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        transition:0.5s all;
+        &:hover {
+          transition:0.5s all;
+          background:rgb(223, 218, 214);
+        }
+      }
+    }
   }
 }

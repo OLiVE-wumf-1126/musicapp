@@ -1,26 +1,37 @@
-.post-show
-  .post-title
-    = @post.title
-  .post-artistname
-    = @post.artist_name
-  .post-image
-    - if @post.image.present?
-      = image_tag @post.image.url
-  .post-content
-    = simple_format @post.content
-  .post-edit
-    - if user_signed_in? && current_user.id == @post.user_id
-      = link_to '編集', "/posts/#{@post.id}/edit", method: :get
-  .post-comment
+.post__show
+  .post__show__right
+    .post__show__right__image
+      - if @post.image.present?
+        = image_tag @post.image.url
+  .post__show__left
+    .post__show__left__title
+      タイトル
+      %br
+      = @post.title
+    .post__show__left__artistname
+      アーティスト
+      %br
+      = @post.artist_name
+    .post__show__left__content
+      コメント
+      %br
+      = @post.content
+    .post__show__left__edit
+      - if user_signed_in? && current_user.id == @post.user_id
+        = link_to '編集', "/posts/#{@post.id}/edit", method: :get
+        
+  .post__show__comment
+    %P ※コメントの投稿には新規登録/ログインが必要です
     - if current_user
       = form_for [@post, @comment] do |form|
         = form.text_area :text, placeholder: "コメントする", rows: "4"
-        = form.submit "SEND"
-      %P コメントの投稿には新規登録/ログインが必要です
-    .post-comment__content
+        = form.submit "SEND", id: :"send-btn"
+    .post__show__left__comment--content
       %h4 《コメント一覧》
       - if @comments
         - @comments.each do |comment|
           %p 
-            = link_to comment.user.name, "/users/#{comment.user_id}"
+            = link_to comment.user.name.truncate(10), "/users/#{comment.user_id}" , id: :"show-comment-user"
+            = comment.created_at.to_s(:datetime_jp)
+            %br
             = comment.text

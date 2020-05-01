@@ -1,26 +1,23 @@
-.posts_index
-  = @name
-  %p さんの投稿一覧
-  .content__center
-    - @posts.each do |post|
-      .content__center__message
-        .content__center__message__left
-          .content__center__message__left--image
-            - if post.image.present?
-              = image_tag post.image.url
-        .content__center__message__right
-          .content__center__message__right__text
-            = post.title
-            = link_to post.title, post_path(post.id)
-          .content__center__message__right__artistname
-            Artist：
-            = post.artist_name
-        .content__center__message__bottom
-          .content__center__message__bottom__data
-            = post.created_at
-        .content__center__message__edit
-          - if user_signed_in? && current_user.id == post.user_id
-            = link_to '削除', "/posts/#{post.id}", method: :delete
-            = link_to '編集', "/posts/#{post.id}/edit", method: :get
-  .content__left
-    %p おにゅーす
+.user_show
+  = @name 
+  さんのマイページ
+.user_content__center
+  - @posts.each do |post|
+    .user_content__center__message
+      .user_content__center__message__left
+        .user_content__center__message__left--image
+          - if post.image.present?
+            = image_tag post.image.url, size: "100x100"
+      .user_content__center__message__right
+        .user_content__center__message__right__text
+          = link_to post.title, post_path(post.id)
+        .user_content__center__message__right__artistname
+          Artist：
+          = post.artist_name
+      .user_content__center__message__bottom
+        .user_content__center__message__bottom__data
+          = post.created_at.to_s(:datetime_jp)
+      .user_content__center__message__edit
+        - if user_signed_in? && current_user.id == post.user_id
+          = link_to '削除', "/posts/#{post.id}", method: :delete
+          = link_to '編集', "/posts/#{post.id}/edit", method: :get

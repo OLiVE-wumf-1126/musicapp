@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20200424002853) do
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "post_id"
-    t.text     "text",       limit: 65535
+    t.text     "text",       limit: 65535, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "title",       limit: 65535
+    t.text     "title",       limit: 65535, null: false
     t.text     "content",     limit: 65535
     t.text     "image",       limit: 65535
     t.text     "artist_name", limit: 65535

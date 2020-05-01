@@ -1,32 +1,66 @@
 .post_edit{
+  height: 650px;
+  width: 1160px;
+  border: 1px solid;
+  border-color: rgb(10, 100, 156);
   font-size: 20px;
-  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-left: 40px;
+  position: relative;
+  font-family: 'TsukuARdGothic-Regular';
+  p{
+    font-size: 40px;
+  }
   .form{
     height: 700px;
-    width: 600px;
-    margin: 0 auto;
+    width: 100%;
     &__title{
       height: 30px;
       width: 600px;
+      float: left;
       margin-bottom: 20px;
     }
     &__image{
-      height: 30px;
-      width: 600px;
-      margin-bottom: 20px;
+      height: 400px;
+      width: 400px;
+      float: right;
+      border: solid 1px;
+      margin-right: 40px;
+      &--btn{
+        display: none;  
+      }
+      #image_prev{
+        height: 100%;
+        width: 100%;
+      }
+      #image_icon{
+        height: 200px;
+        width: 200px;
+      }
     }
     &__artistname{
       height: 30px;
       width: 600px;
+      float: left;
       margin-bottom: 20px;
     }
     &__text{
       height: 300px;
       width: 600px;
+      float: left;
       margin-bottom: 20px;
     }
     &__send{
-
+      position: absolute;
+      top: 530px;
+      right: 820px;
+      float: left;
+      width: 300px;
+      height: 30px;
+      border: solid 1px;color: rgb(34, 34, 59);
+      border-color: rgb(89, 89, 160);
+      background-color: rgb(215, 215, 255);
     }
   }
 }
